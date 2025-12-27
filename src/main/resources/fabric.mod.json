@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "press-f-to-stack",
+  "version": "${version}",
+  "name": "Press F to Stack",
+  "description": "Stacks blocks in offhand when F pressed if possible\nIcon taken from https://www.flaticon.com/free-icons/letter-f",
+  "authors": [
+    {
+      "name": "RashingPro",
+      "contact": {
+        "homepage": "https://rashing.pro/",
+        "email": "contact@rashing.pro"
+      }
+    }
+  ],
+  "contact": {
+    "sources": "https://github.com/RashingPro/PressFtoStack"
+  },
+  "license": "MIT",
+  "icon": "assets/press-f-to-stack/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.rashing.press_f_to_stack.PressFToStackClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "minecraft": "=${minecraft_version}",
+    "java": ">=21",
+    "fabric-api": ">=${fabric_api_version}"
+  }
+}
