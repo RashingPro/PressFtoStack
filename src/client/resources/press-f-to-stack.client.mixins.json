@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "dev.rashing.press_f_to_stack.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ClientPlayerEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
