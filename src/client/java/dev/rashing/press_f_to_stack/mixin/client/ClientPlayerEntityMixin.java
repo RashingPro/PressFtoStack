@@ -26,12 +26,13 @@ public class ClientPlayerEntityMixin {
             if (player != null) {
                 ItemStack stackInMain = player.getStackInHand(Hand.MAIN_HAND);
                 ItemStack stackInOff = player.getStackInHand(Hand.OFF_HAND);
-                if (stackInMain.getItem() == stackInOff.getItem()) {
+                if (stackInMain.getItem() == stackInOff.getItem() && !stackInMain.isEmpty()) {
+                    short hotbarSlot = (short) (36 + player.getInventory().getSelectedSlot());
                     // Pickup item from hotbar
                     handler.sendPacket(new ClickSlotC2SPacket(
                             player.currentScreenHandler.syncId,
                             player.currentScreenHandler.getRevision(),
-                            (short) (36 + player.getInventory().getSelectedSlot()),
+                            hotbarSlot,
                             (byte) 0,
                             SlotActionType.PICKUP,
                             Int2ObjectMaps.emptyMap(),
@@ -51,7 +52,7 @@ public class ClientPlayerEntityMixin {
                     handler.sendPacket(new ClickSlotC2SPacket(
                             player.currentScreenHandler.syncId,
                             player.currentScreenHandler.getRevision(),
-                            (short) (36 + player.getInventory().getSelectedSlot()),
+                            hotbarSlot,
                             (byte) 0,
                             SlotActionType.PICKUP,
                             Int2ObjectMaps.emptyMap(),
